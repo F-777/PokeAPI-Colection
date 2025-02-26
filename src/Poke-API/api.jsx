@@ -141,22 +141,22 @@ const PokeApi = () => {
             </Card.Body>
           </Card>
 
-          {/* Modal untuk menampilkan detail Pokémon */}
-          <Modal show={showModal} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>{pokemon.name}</Modal.Title>
+          {/* modal about present pokemon details */}
+          <Modal show={showModal} onHide={handleClose} className='show-detils' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' , alignItems: 'center', gap: '2rem'}}>
+            <Modal.Header>
+              <Modal.Title className='title-detils' style={{fontFamily: 'DM Sans,serif', fontSize: '40px', textAlign: 'center', color: 'gold'}}>{pokemon.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <img
                 src={pokemon.sprites.front_default}
                 alt={pokemon.name}
-                style={{ width: '180px', height: '180px' }}
+                style={{ width: '180px', height: '180px', alignItems: 'center' , justifyContent: 'center'}}
               />
               <p><strong>Height:</strong> {pokemon.height}</p>
               <p><strong>Weight:</strong> {pokemon.weight}</p>
               <p><strong>Type:</strong> {pokemon.types.map((type) => type.type.name).join(', ')}</p>
               <p><strong>Abilities:</strong> {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</p>
-              <p><strong>Description:</strong> {pokemonDescription}</p> {/* Menampilkan deskripsi Pokémon */}
+              <p><strong>Description:</strong> {pokemonDescription}</p> {/* present the pokemon description*/}
               <p><strong>Stats:</strong></p>
               <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
                 {pokemon.stats.map((stat) => (
