@@ -71,7 +71,11 @@ const PokeApi = () => {
     return 'danger'; // Red (superpower)
   };
 
+
   const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+  const displayedPokemon = recommendedPokemon.slice(startIndex, endIndex);
+
 
   return (
     <div className="app">
@@ -125,14 +129,17 @@ const PokeApi = () => {
             fontWeight: 'normal',
             fontSize: '20px',
             padding: '10px 20px'
-          }}>Next</button>
+          }}
+        >
+          Next
+        </button>
       </div>
 
       {/* present recomended collection */}
       {!pokemon && (
         <>
           <div className="recommendations" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-            {recommendedPokemon.map((poke) => (
+            {displayedPokemon.map((poke) => (
               <Card key={poke.id} className="pokemon-card" style={{ margin: '10px', cursor: 'pointer' }} onClick={async () => {
                 setPokemon(poke);
                 const description = await fetchPokemonSpecies(poke.id); // Fetch clicked Pokemon description
@@ -184,20 +191,20 @@ const PokeApi = () => {
           </Card>
 
           {/* modal about present pokemon details */}
-          <Modal show={showModal} onHide={handleClose} className='show-detils' style={{ 
-                 display: 'flex', 
-                 flexDirection: 'column', 
-                 justifyContent: 'center',
-                 alignItems: 'center',
-                 gap: '2rem' 
-            }}>
+          <Modal show={showModal} onHide={handleClose} className='show-detils' style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '2rem'
+          }}>
             <Modal.Header>
               <Modal.Title className='title-detils' style={{ fontFamily: 'DM Sans,serif', fontSize: '40px', textAlign: 'center', color: 'gold' }}>{pokemon.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body className='body-view' style={{
-                 display: 'flex',
-                 flexDirection: 'column',
-                 justifyContent: 'center'
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center'
             }}>
               <img
                 src={pokemon.sprites.front_default}
