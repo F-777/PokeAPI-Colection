@@ -65,8 +65,8 @@ button {
 
 /* Efek hover pada card */
 .pokemon-card:hover {
-  transform: scale(1.25); /* Membuat card sedikit membesar */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Meningkatkan shadow untuk efek hover */
+  transform: scale(1.1); /* Membuat card sedikit membesar */
+  box-shadow: 0 0 15px gold/* Meningkatkan shadow untuk efek hover */
 }
 
 .recommendations {
