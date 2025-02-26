@@ -1,0 +1,90 @@
+.app {
+  text-align: center;
+  padding: 20px;
+  background-color: #1c1c1c;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  color: #ffbb00;
+  text-align: left;
+}
+
+.search-form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px; 
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 16px;
+  background-color: maroon;
+  border: 3px solid gold;
+  color: gold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.pokemon-card {
+  border: 3px solid gold;
+  background-color: maroon;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pokemon-card img {
+  width: 150px;
+  height: 150px;
+}
+
+/* Efek hover pada card */
+.pokemon-card:hover {
+  transform: scale(1.25); /* Membuat card sedikit membesar */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Meningkatkan shadow untuk efek hover */
+}
+
+.recommendations {
+  margin-top: 30px;
+}
+
+.recommendations h2 {
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+.pokemon-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pokemon-card h2 {
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
