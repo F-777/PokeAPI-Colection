@@ -94,7 +94,14 @@ const PokeApi = () => {
           <Button variant="warning" type="submit" className="btn-submit">Search</Button>
         </Form>
       </div>
-      <div className='pagination-btn' style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '2rem' }}>
+      <div className='pagination-btn' style={{ 
+        display: 'flex', 
+        flexDirection: 'row', 
+        justifyContent: 'center', 
+        gap: '2rem',
+        marginBottom: '3.55rem',
+        marginTop: '4.325rem'
+      }}>
         <button
           onClick={() => setPage(page - 1)}
           disabled={page === 1}
@@ -105,8 +112,7 @@ const PokeApi = () => {
             fontWeight: 'normal',
             fontSize: '15px',
             padding: '10px 20px',
-            marginBottom: '3.55rem',
-            marginTop: '4.325rem'
+            borderColor: 'gold'
           }}
         >
           Prev
@@ -130,7 +136,8 @@ const PokeApi = () => {
             fontFamily: 'sans-serif',
             fontWeight: 'normal',
             fontSize: '15px',
-            padding: '10px 20px'
+            padding: '10px 20px',
+            borderColor: 'gold'
           }}
         >
           Next
@@ -150,15 +157,15 @@ const PokeApi = () => {
               }}>
                 <Card.Img variant="top" src={poke.sprites.front_default} alt={poke.name} />
                 <Card.Body>
-                  <Card.Title className='front' style={{ fontFamily: 'sans-serif', fontSize: '24px', fontWeight: '600', color: 'gold' }}>{poke.name}</Card.Title>
-                  <Card.Text className='height' style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: '500', color: 'gold'}}>
-                    Height: {poke.height}
+                  <Card.Title className='front' style={{ fontFamily: 'sans-serif', fontSize: '30px', fontWeight: '700', color: 'gold' }}>{poke.name}</Card.Title>
+                  <Card.Text className='height' style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: '500', color: 'gold' }}>
+                    Height : <text style={{color: 'maroon', background: 'gold', borderRadius: '8px', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8px', paddingBottom: '8px', fontWeight: '550'}}>{poke.height}</text>
                   </Card.Text>
                   <Card.Text className='weight' style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: '500', color: 'gold'}}>
-                    Weight: {poke.weight}
+                    Weight : <text style={{color: 'maroon', background: 'gold', borderRadius: '8px', paddingLeft: '7px', paddingRight: '7px', paddingTop: '7px', paddingBottom: '7px', fontWeight: '550'}}>{poke.weight}</text>
                   </Card.Text>
                   <Card.Text className='types' style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: '500', color: 'gold'}}>
-                    Type: {poke.types.map((type) => type.type.name).join(', ')}
+                    Type :  <text style={{color: 'maroon', background: 'gold', borderRadius: '8px', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8px', paddingBottom: '8px', fontWeight: '600'}}>{poke.types.map((type) => type.type.name).join(', ')}</text>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -175,25 +182,25 @@ const PokeApi = () => {
               <Card.Title
                 style={{
                   fontFamily: 'sans-serif',
-                  fontSize: '2rem',
+                  fontSize: '30px',
                   fontWeight: '600',
                   color: 'gold'
                 }}>{pokemon.name}</Card.Title>
               <Card.Img variant="top" src={pokemon.sprites.front_default} alt={pokemon.name} />
               <Card.Text className='height' style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: '500', color: 'gold'}}>
-                Height: {pokemon.height}
+                Height : <text style={{color: 'maroon', background: 'gold', borderRadius: '8px', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8px', paddingBottom: '8px', fontWeight: '600'}}>{pokemon.height}</text>
               </Card.Text>
               <Card.Text className='weight' style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: '500', color: 'gold'}}>
-                Weight: {pokemon.weight}
+                Weight : <text style={{color: 'maroon', background: 'gold', borderRadius: '8px', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8px', paddingBottom: '8px', fontWeight: '600'}}>{pokemon.weight}</text>
               </Card.Text>
               <Card.Text className='types' style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: '500', color: 'gold'}}>
-                Type: {pokemon.types.map((type) => type.type.name).join(', ')}
+                Type : <text style={{color: 'maroon', background: 'gold', borderRadius: '8px', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8px', paddingBottom: '8px', fontWeight: '600'}}>{pokemon.types.map((type) => type.type.name).join(', ')}</text>
               </Card.Text>
             </Card.Body>
           </Card>
 
           {/* modal about present pokemon details */}
-           <Modal show={showModal} onHide={handleClose} className='show-detils' style={{
+          <Modal show={showModal} onHide={handleClose} className='show-detils' style={{
                 alignItems: 'center',
                 border: '3px solid gold',
                 borderRadius: '8px', 
@@ -235,12 +242,12 @@ const PokeApi = () => {
                   justifyContent: 'center' 
                 }}
               />
-              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Height :</strong> {pokemon.height}</p>
-              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Weight :</strong> {pokemon.weight}</p>
-              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Type :</strong> {pokemon.types.map((type) => type.type.name).join(', ')}</p>
-              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Abilities :</strong> {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</p>
+              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Height :</strong> <text style={{ background: 'maroon', color: 'gold', paddingTop: '5.5px', paddingBottom: '5.5px', paddingLeft: '5.5px', paddingRight: '5.5px', borderRadius: '8px'}}>{pokemon.height}</text></p>
+              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Weight :</strong> <text style={{ background: 'maroon', color: 'gold', paddingTop: '5.5px', paddingBottom: '5.5px', paddingLeft: '5.5px', paddingRight: '5.5px', borderRadius: '8px'}}>{pokemon.weight}</text></p>
+              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Type :</strong> <text style={{ background: 'maroon', color: 'gold', paddingTop: '5.5px', paddingBottom: '5.5px', paddingLeft: '5.5px', paddingRight: '5.5px', borderRadius: '8px'}}>{pokemon.types.map((type) => type.type.name).join(', ')}</text></p>
+              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Abilities :</strong> <text style={{ background: 'maroon', color: 'gold', paddingTop: '5.5px', paddingBottom: '5.5px', paddingLeft: '5.5px', paddingRight: '5.5px', borderRadius: '8px'}}>{pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</text></p>
               <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Description :</strong> {pokemonDescription}</p> {/* present the pokemon description*/}
-              <p style={{color: 'maroon', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', background: 'gold', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Stats :</strong></p>
+              <p style={{color: 'gold', fontFamily: 'sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '18px', paddingTop: '8px', paddingBottom: '8px', borderRadius: '9px', paddingRight: '12px'}}><strong style={{marginLeft: '10px', marginRight: '5px'}}>Stats :</strong></p>
               <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
                 {pokemon.stats.map((stat) => (
                   <li key={stat.stat.name} style={{ marginBottom: '10px', marginLeft: '20px', color: 'gold'}}>
