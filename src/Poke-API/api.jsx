@@ -104,7 +104,9 @@ const PokeApi = () => {
             fontFamily: 'sans-serif',
             fontWeight: 'normal',
             fontSize: '15px',
-            padding: '10px 20px'
+            padding: '10px 20px',
+            marginBottom: '3.55rem',
+            marginTop: '4.325rem'
           }}
         >
           Prev
